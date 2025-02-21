@@ -12,7 +12,7 @@ from scipy.special import logsumexp
 from Mixture_Representations_for_the_Prior import utils
 
 run_dir = PureWindowsPath(r'oneD_pw_const_wavelet_deblurr_large/Runs/conf0')
-plots_dir = PureWindowsPath(r'C:\Users\flock\Projects\Mixture_Representations_for_the_Prior\plots_test')
+plots_dir = PureWindowsPath(r'C:\Users\flock\Projects\Mixture_Representations_for_the_Prior')
 
 par = utils.load( Path(run_dir / 'par'))
 x_sig, y_true, y, d_coeff, x_coeff, coeff_slices, coeff_shapes, delta, I_nz, A_mat = utils.load( Path( run_dir / 'problem'))
@@ -111,9 +111,9 @@ fig, ax = plt.subplots()
 # y_lim = (1e-7, 1e7)
 # y_int = ( np.log(y_lim[1]) - np.log(y_lim[0]) ) / 4
 
-h_MAP = utils.load(r'oneD_pw_const_wavelet_deblurr_large\Runs\conf0\sample_v_MAP\sam0\ch0\h_w_MAP')
+h_MAP = utils.load(r'oneD_pw_const_wavelet_deblurr_large\Runs\conf0\sample_w_MAP\sam0\h_w_MAP')
 h_ref = utils.load(r'oneD_pw_const_wavelet_deblurr_large\Runs\conf0\sample_v_MALA_ref\sam0\h_ref')
-h_ref_x = utils.load(r'oneD_pw_const_wavelet_deblurr_large\Runs\conf0\sample_MALA_x_ref\sam0\h_ref')
+h_ref_x = utils.load(r'oneD_pw_const_wavelet_deblurr_large\Runs\conf0\sample_x_MALA_ref\sam0\h_ref')
 
 bounds = np.zeros((4, d_coeff))
 i_MAP = np.argsort(h_MAP)
